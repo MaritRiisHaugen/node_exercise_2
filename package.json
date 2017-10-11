@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "serverjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "tester"
+  },
+  "repository": {
+    "type": "git",
+    "url": "node_exercise_2"
+  },
+  "keywords": [
+    "server",
+    "javascript"
+  ],
+  "author": "Marit Riis Haugen",
+  "license": "ISC",
+  "dependencies": {
+    "express.js": "^1.0.0"
+  }
+}
