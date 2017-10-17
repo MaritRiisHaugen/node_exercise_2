@@ -1,25 +1,28 @@
 const express = require('express')
 const app = express()
 
-app.use(express.static('public'))
+//app.use(express.static(__dirname, + 'public'));
+app.use(express.static('public'));
 
 
 /*app.get('/', function (req, res) {
   res.send('Hello World!')
 })*/
 
-app.listen(process.env.PORT || 8080, function () {
-  console.log('Example app listening on port 8080!')
+function randomGreeting(){
+    var greetings = ["Greetings", "Hello", "Salutations", "Hi", "Good day" ];
+
+    var random = Math.floor(Math.random()*(greetings.length+1));
+    
+    return greeting[random];
+    
+}
+
+
+app.get('/greet/:name', function (req, res) {
+  res.send(randomGreeting + " " + requst.params.name);
 })
 
-
-
-var greetings = ["Greetings", "Hello", "Salutations", "Hi", "Good day" ];
-
-var random = Math.floor(Math.random()*(greetings.length+1));
-
-var name = [" Christian"];
-
-app.get('/greet', function (req, res) {
-  res.send(greetings[random] + " " + name[0]);
+app.listen(8080, function () {
+  console.log('Example app listening on port 8080!')
 })
