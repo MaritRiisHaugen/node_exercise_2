@@ -8,9 +8,6 @@ app.get('/', function (req, res) {
   res.send('')
 })
 
-app.get('/greet/:name', function (req, res) {
-  res.send(randomGreeting + " " + req.params.name);
-})
 
 app.listen(process.env.PORT || 8080 , function () {
   console.log('Example app listening on  port 8080!')
@@ -25,3 +22,7 @@ function randomGreeting(){
     return greeting[random];
     
 }
+
+app.get('/greet/:name', function (req, res) {
+  res.send(randomGreeting + " " + req.params.name);
+})
